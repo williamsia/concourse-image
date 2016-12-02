@@ -8,15 +8,14 @@ jobs:
     trigger: true
   - put: docker-image
     params:
-      build: git-docker-golang/ci
+      build: git-docker-golang
 
 resources:  
 - name: git-docker-golang
   type: git
   source:
-    uri: git@github.com:williamsia/docker-golang.git
+    uri: https://github.com/williamsia/docker-golang.git
     branch: master
-    private_key: {{github-private-key}}
 
 - name: docker-image
   type: docker-image
